@@ -43,8 +43,8 @@ export const signup = async (req, res) => {
     const token = generateToken(newUser._id);
     res.cookie("jwt", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
+      secure: process.env.NODE_ENV === "production",             
+      sameSite: "None", 
       maxAge: 7 * 24 * 60 * 60 * 1000
     });
 
@@ -59,7 +59,7 @@ export const signup = async (req, res) => {
         dob: newUser.dob
       }
     });
-
+    console.log("User signed up successfully:", newUser._id);
   } catch (error) {
     console.error("Signup error:", error.message);
     res.status(500).json({ message: "Internal Server Error" });
@@ -79,8 +79,8 @@ export const login = async (req, res) => {
     const token = generateToken(user._id);
     res.cookie("jwt", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
+      secure: process.env.NODE_ENV === "production",            
+      sameSite: "None",          
       maxAge: 7 * 24 * 60 * 60 * 1000
     });
 
@@ -95,7 +95,7 @@ export const login = async (req, res) => {
         dob: user.dob
       }
     });
-
+    console.log("User logged in successfully:", user._id);
   } catch (error) {
     console.error("Login error:", error.message);
     res.status(500).json({ message: "Internal Server Error" });
@@ -107,9 +107,10 @@ export const logout = (req, res) => {
     res.clearCookie("jwt", {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "strict"
+      sameSite: "None"
     });
     res.status(200).json({ message: "Logged out successfully" });
+    console.log("User logged out successfully");
   } catch (error) {
     console.error("Logout error:", error.message);
     res.status(500).json({ message: "Internal Server Error" });
@@ -125,5 +126,3 @@ console.log("error in checkAuth controller",error.message);
 res.status(500).json({message:"Internal server error"});
 }
 };
-
-

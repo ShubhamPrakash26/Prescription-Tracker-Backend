@@ -25,6 +25,7 @@ app.use(cors({
   origin: [
     'http://vipasyanadoc-001-site20.ktempurl.com',
     'https://vipasyanadoc-001-site20.ktempurl.com',
+    'https://prescription-tracker-backend.onrender.com',
     'http://localhost:5173'
   ],
   credentials: true,
