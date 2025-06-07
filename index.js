@@ -21,10 +21,11 @@ const PORT = process.env.PORT || 5000;
 
 // Enable CORS
 // Replace existing CORS setup with this:
+// http://vipasyanadoc-001-site22.ktempurl.com/
 app.use(cors({
   origin: [
-    'http://vipasyanadoc-001-site20.ktempurl.com',
-    'https://vipasyanadoc-001-site20.ktempurl.com',
+    'http://vipasyanadoc-001-site22.ktempurl.com',
+    'https://vipasyanadoc-001-site22.ktempurl.com',
     'https://prescription-tracker-backend.onrender.com',
     'http://localhost:5173'
   ],
