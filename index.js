@@ -58,8 +58,9 @@ app.get('/api/health', (req, res) => {
 app.get('/', (req, res) => {
   res.send('Backend is running');
 });
-app.use("/api/auth", authRoutes);
+
 app.use("/api", userRoutes);
+app.use("/api/auth", authRoutes);
 app.use("/api/family", memberRoutes);
 app.use("/api/prescriptions", prescriptionRoutes);
 app.use("/api/reports", reportRoutes);
