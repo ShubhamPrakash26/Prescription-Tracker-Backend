@@ -27,7 +27,10 @@ app.use(cors({
     'http://vipasyanadoc-001-site22.ktempurl.com',
     'https://vipasyanadoc-001-site22.ktempurl.com',
     'https://prescription-tracker-backend.onrender.com',
-    'http://localhost:5173'
+    'http://localhost:5173',
+    'http://localhost:3000',
+    'http://www.medsupervision.in/',
+    'https://www.medsupervision.in/'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
