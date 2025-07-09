@@ -42,11 +42,11 @@ export const signup = async (req, res) => {
 
     const token = generateToken(newUser._id);
     res.cookie("jwt", token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",             
-      sameSite: "None", 
-      maxAge: 7 * 24 * 60 * 60 * 1000
-    });
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.NODE_ENV === "production" ? "strict" : "lax",
+    maxAge: 7 * 24 * 60 * 60 * 1000
+  });
 
     res.status(201).json({
       user: {
@@ -78,11 +78,11 @@ export const login = async (req, res) => {
 
     const token = generateToken(user._id);
     res.cookie("jwt", token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",            
-      sameSite: "None",          
-      maxAge: 7 * 24 * 60 * 60 * 1000
-    });
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.NODE_ENV === "production" ? "strict" : "lax",
+    maxAge: 7 * 24 * 60 * 60 * 1000
+  });
 
     res.status(200).json({
       user: {
@@ -105,9 +105,9 @@ export const login = async (req, res) => {
 export const logout = (req, res) => {
   try {
     res.clearCookie("jwt", {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "None"
+     httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.NODE_ENV === "production" ? "strict" : "lax"
     });
     res.status(200).json({ message: "Logged out successfully" });
     console.log("User logged out successfully");
