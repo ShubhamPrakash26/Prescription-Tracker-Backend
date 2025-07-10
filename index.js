@@ -29,8 +29,8 @@ app.use(cors({
     'https://prescription-tracker-backend.onrender.com',
     'http://localhost:5173',
     'http://localhost:3000',
-    'http://www.medsupervision.in/',
-    'https://www.medsupervision.in/'
+    'http://www.medsupervision.in',
+    'https://www.medsupervision.in'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
