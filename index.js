@@ -37,7 +37,6 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-app.options('*', cors());
 
 // Enable JSON parsing and cookies
 app.use(express.json({ limit: "10mb" }));
