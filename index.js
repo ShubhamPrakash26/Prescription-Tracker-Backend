@@ -25,14 +25,10 @@ const __dirname = path.dirname(__filename);
 
 const allowedOrigins = [
   'http://www.medsupervision.in',
-  'https://www.medsupervision.in',
-  'http://medsupervision.in',
-  'https://medsupervision.in',
-  'http://vipasyanadoc-001-site22.ktempurl.com',
-  'https://vipasyanadoc-001-site22.ktempurl.com',
   'https://prescription-tracker-backend.onrender.com',
   'http://localhost:5173',
-  'http://localhost:3000'
+  'http://localhost:3000',
+  "https://prescriptiontracker.vercel.app"
 ];
 
 // Global CORS middleware (handles all CORS and preflight automatically)
