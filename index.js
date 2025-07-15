@@ -28,7 +28,8 @@ const allowedOrigins = [
   'https://prescription-tracker-backend.onrender.com',
   'http://localhost:5173',
   'http://localhost:3000',
-  "https://prescriptiontracker.vercel.app"
+  "https://prescriptiontracker.vercel.app",
+  "http://medsupervision.in"
 ];
 
 // Global CORS middleware (handles all CORS and preflight automatically)
